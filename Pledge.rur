@@ -1,0 +1,44 @@
+
+def tope(H):
+    while not front_is_clear():
+        turn_right()
+
+def turn_right():
+    repeat(turn_left,3)
+    return -90
+    
+def turn_lefti():
+    turn_left()
+    return 90
+
+def manoD():
+    beepers_en_bolsa=0
+    global H 
+    H = 0
+    while beepers_en_bolsa == 0:
+        move()
+        turn_left()
+        tope()
+
+def pledge():
+    beepers_en_bolsa=0
+    global H 
+    H = 0
+    while beepers_en_bolsa==0:
+        if H==0 and front_is_clear():
+            move()
+        else:
+            H = H + turn_lefti()
+            while not front_is_clear():
+                H = H + turn_right()
+            move()
+            
+pledge()
+
+
+
+
+
+
+
+
